@@ -16,13 +16,24 @@
   </head>
   <body>
 
-    <div class="row">
-      <div class="large-12 columns">
-        <h1>Welcome to Foundation</h1>
+    <header id="header" class="row">
+      <div class="large-6 columns">
+        <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
       </div>
-    </div>
+      <div class="large-6 columns">
+        <ul class="nav">
+          {% for page in pages %}
+          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+    </header><!-- /header#header -->
 
-    <div class="row">
+    <section id="content" class="row">
+      <div class="large-12 columns">
+        {{ content }}
+      </div>
+
       <div class="large-12 columns">
       	<div class="panel">
 	        <h3>We&rsquo;re stoked you want to try Foundation! </h3>
@@ -41,9 +52,7 @@
 					</div>
       	</div>
       </div>
-    </div>
 
-    <div class="row">
       <div class="large-8 medium-8 columns">
         <h5>Here&rsquo;s your basic grid:</h5>
         <!-- Grid Example -->
@@ -162,7 +171,15 @@
         	<a href="http://foundation.zurb.com/docs/" class="small button">Go to Foundation Docs</a>
         </div>
       </div>
-    </div>
+    </section> <!-- /section#content -->
+
+    <footer id="footer" class="row">
+      <div class="large-12 columns">
+        <a href="http://picocms.org/">Pico</a> was made by <a href="http://gilbert.pellegrom.me">Gilbert Pellegrom</a>
+        from <a href="http://dev7studios.com">Dev7studios</a>.
+      </div>
+    </footer><!-- /footer#footer -->
+
 
     <script src="{{ theme_url }}/js/vendor/jquery.js"></script>
     <script src="{{ theme_url }}/js/foundation.min.js"></script>
