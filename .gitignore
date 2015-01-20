@@ -1,1 +1,3 @@
 content/*
+*.sublime-workspace
+*.sublime-project
