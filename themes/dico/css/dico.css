@@ -4,6 +4,7 @@
  * 2. Prevent iOS text size adjust after orientation change, without disabling
  *    user zoom.
  */
+@import "http://fonts.googleapis.com/css?family=Roboto";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6447,5 +6448,25 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+body {
+  font-family: "Roboto", sans-serif;
+  margin: 0px; }
+
+header.row {
+  max-width: 100%; }
+header .inner-header {
+  padding: 30px;
+  background-color: #A6A6A6; }
+  header .inner-header .title h1 a {
+    color: #000; }
+  header .inner-header .description {
+    width: 40%;
+    min-width: 300px; }
+    header .inner-header .description p {
+      font-size: 0.9em;
+      line-height: 1.3em; }
+
+nav.definition-list ul {
+  list-style: none; }
 
 /*# sourceMappingURL=dico.css.map */

@@ -16,24 +16,19 @@
   </head>
   <body>
 
-    <header id="header" class="row">
-      <div class="large-6 columns">
-        <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
-      </div>
-      <div class="large-6 columns">
-        <ul class="nav">
-          {% for page in pages %}
-          <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-          {% endfor %}
-        </ul>
-      </div>
-    </header><!-- /header#header -->
+      <header id="header" class="row">
+        <div class="inner-header">
+          <div class="title">
+            <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
+          </div>
+        </div>
+      </header><!-- /header#header -->
 
-    <section id="content" class="row">
-      <div class="large-12 columns">
-        {{ content }}
-      </div>
-    </section> <!-- /section#content -->
+      <section id="content" class="row">
+        <div class="large-12 columns">
+          {{ content }}
+        </div>
+      </section> <!-- /section#content -->
 
     <footer id="footer" class="row">
       <div class="large-12 columns">

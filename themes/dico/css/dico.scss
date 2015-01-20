@@ -2,4 +2,42 @@
 
 @import "../bower_components/foundation/scss/normalize.scss";
 @import "../bower_components/foundation/scss/foundation.scss";
+@import "http://fonts.googleapis.com/css?family=Roboto";
+
+body {
+	font-family: "Roboto", sans-serif;
+	margin: 0px;
+}
+
+header {
+	&.row{
+		max-width: 100%;
+	}
+	.inner-header{
+		padding: 30px;
+		background-color: #A6A6A6;
+		.title {
+			
+			h1 {
+				a{
+					color:#000;
+				}
+			}
+		}
+		.description {
+			width:40%;
+			min-width: 300px;
+			p{
+				font-size: 0.9em;
+				line-height: 1.3em;
+			}
+		}
+	}	
+}
+
+nav.definition-list {
+	ul {
+		list-style: none;
+	}
+}
 
