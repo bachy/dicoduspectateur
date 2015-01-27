@@ -76,7 +76,7 @@ class AT_Navigation {
 		{
 			$_child = $navigation['_child'];
 			array_multisort($_child);
-			
+
 			foreach ($_child as $c)
 			{
 				$child .= $this->at_build_navigation($c);
@@ -85,16 +85,18 @@ class AT_Navigation {
 			$child = $start ? sprintf($ul, $id, $class, $child) : sprintf($ul, $child);
 		}
 		
+
 		$li = isset($navigation['title'])
 			? sprintf(
-				'<li class="%1$s %5$s large-2 columns"><a href="%2$s" class="%1$s %6$s" title="%3$s"><h3>%3$s</h3></a><p>%7$s</p>%4$s</li>',
+				'<li class="%1$s %5$s large-2 columns"><h3>%8$s</h3><a href="%2$s" class="%1$s %6$s" title="%3$s"><h3>%3$s</h3></a><p>%7$s</p>%4$s</li>',
 				$navigation['class'],
 				$navigation['url'],
 				$navigation['title'],
 				$child,
 				$class_li,
 				$class_a,
-				$navigation['excerpt']
+				$navigation['excerpt'],
+				$navigation['firstLetter']
 			)
 			: $child;
 		
@@ -138,10 +140,18 @@ class AT_Navigation {
 		if (count($split) == 1)
 		{			
 			$is_index = ($split[0] == '') ? true : false;
+
+			$previous = null;
+			$titre = $page['title'];
+		    $firstLetter = substr($titre, 0, 1);		
+			
+
 			$ret = array(
 				'title'			=> $page['title'],
 				'url'			=> $page['url'],
 				'excerpt'		=> $page['excerpt'],
+				'firstLetter'	=> $firstLetter,
+				'previous'		=> $previous,
 				'class'			=> ($page['url'] == $current_page['url']) ? $activeClass : ''
 			);
 			
