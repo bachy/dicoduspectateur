@@ -41,3 +41,29 @@ nav.definition-list {
 	}
 }
 
+// DIALOG CSS
+
+.ui-dialog {
+	background: #fff;
+	border: 2px solid #000;
+	position: absolute;
+
+	h1{
+		font-size: 1.7em;
+		margin-left: 10px;
+	}
+
+	p{
+		font-size: 0.8em;
+
+	}
+
+	.ui-button{
+		border:none;
+		background-color: #A6A6A6;
+		padding: 2px 10px;
+		position: absolute;
+		right:0;
+	}
+}
+

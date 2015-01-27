@@ -1,0 +1,37 @@
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>{% if meta.title %}{{ meta.title }} | {% endif %}{{ site_title }}</title>
+    {% if meta.description %}
+      <meta name="description" content="{{ meta.description }}">
+    {% endif %}{% if meta.robots %}
+      <meta name="robots" content="{{ meta.robots }}">
+    {% endif %}
+
+    <link rel="stylesheet" href="{{ theme_url }}/css/dico.css" />
+    <script src="{{ theme_url }}/bower_components/modernizr/modernizr.js"></script>
+  </head>
+  <body>
+
+      <header id="header" class="row">
+        <div class="def-title">
+          <h1>{{ meta.title }}</h1>
+        </div>
+      </header><!-- /header#header -->
+
+      <section id="content" class="row">
+        <div class="large-12 columns">
+          {{ content }}
+        </div>
+      </section> <!-- /section#content -->
+
+    <script src="{{ theme_url }}/bower_components/jquery/dist/jquery.min.js"></script>
+    <!--<script src="{{ theme_url }}/js/foundation.min.js"></script>-->
+    <script>
+      //$(document).foundation();
+    </script>
+  </body>
+</html>
