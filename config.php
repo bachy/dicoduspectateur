@@ -24,5 +24,6 @@ $config['excerpt_length'] = 20;			// The pages excerpt length (in words)
 //$config['front_page'] = "/definitions";
 
 // Exclude page from menu
-$config['at_navigation']['exclude']['single'] = array('index', 'definitions/index');
+//$config['at_navigation']['exclude']['single'] = array('index', 'definitions/index', 'about/index');
+
 

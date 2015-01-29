@@ -7,7 +7,7 @@
  * @link http://ahmet-topal.com
  * @license http://opensource.org/licenses/MIT
  */
-class AT_Navigation {	
+class Menu_Principal {	
 	##
 	# VARS
 	##
@@ -41,23 +41,23 @@ class AT_Navigation {
 		$this->settings = $settings;
 		
 		// default id
-		if (!isset($this->settings['at_navigation']['id'])) { $this->settings['at_navigation']['id'] = 'at-navigation'; }
+		if (!isset($this->settings['menu_principal']['id'])) { $this->settings['menu_principal']['id'] = 'menu-principal'; }
 		
 		// default classes
-		if (!isset($this->settings['at_navigation']['class'])) { $this->settings['at_navigation']['class'] = 'at-navigation'; }
-		if (!isset($this->settings['at_navigation']['class_li'])) { $this->settings['at_navigation']['class_li'] = 'li-item'; }
-		if (!isset($this->settings['at_navigation']['class_a'])) { $this->settings['at_navigation']['class_a'] = 'a-item'; }
+		if (!isset($this->settings['menu_principal']['class'])) { $this->settings['menu_principal']['class'] = 'menu-principal'; }
+		if (!isset($this->settings['menu_principal']['class_li'])) { $this->settings['menu_principal']['class_li'] = 'li-item'; }
+		if (!isset($this->settings['menu_principal']['class_a'])) { $this->settings['menu_principal']['class_a'] = 'a-item'; }
 		
 		// default excludes
-		$this->settings['at_navigation']['exclude'] = array_merge_recursive(
+		$this->settings['menu_principal']['exclude'] = array_merge_recursive(
 			array('single' => array(), 'folder' => array()),
-			isset($this->settings['at_navigation']['exclude']) ? $this->settings['at_navigation']['exclude'] : array()
+			isset($this->settings['menu_principal']['exclude']) ? $this->settings['menu_principal']['exclude'] : array()
 		);
 	}
 	
 	public function before_render(&$twig_vars, &$twig)
 	{
-		$twig_vars['at_navigation']['navigation'] = $this->at_build_navigation($this->navigation, true);
+		$twig_vars['menu_principal']['navigation'] = $this->at_build_navigation($this->navigation, true);
 	}
 
 	##
@@ -66,10 +66,10 @@ class AT_Navigation {
 	
 	private function at_build_navigation($navigation = array(), $start = false)
 	{
-		$id = $start ? $this->settings['at_navigation']['id'] : '';
-		$class = $start ? $this->settings['at_navigation']['class'] : '';
-		$class_li = $this->settings['at_navigation']['class_li'];
-		$class_a = $this->settings['at_navigation']['class_a'];
+		$id = $start ? $this->settings['menu_principal']['id'] : '';
+		$class = $start ? $this->settings['menu_principal']['class'] : '';
+		$class_li = $this->settings['menu_principal']['class_li'];
+		$class_a = $this->settings['menu_principal']['class_a'];
 		$child = '';
 		$ul = $start ? '<ul id="%s" class="%s">%s</ul>' : '<ul>%s</ul>';
 
@@ -91,16 +91,15 @@ class AT_Navigation {
 		}
 		
 		if(isset($navigation['title'])){
-			
+
         	$li = sprintf(
-				'<li class="%1$s %5$s large-2 columns"><a href="%2$s" class="%1$s %6$s" title="%3$s"><h3>%3$s</h3></a><p>%7$s</p>%4$s</li>',
+				'<li class="%1$s %5$s large-2 columns"><a href="%2$s" class="%1$s %6$s" title="%3$s"><h3>%3$s</h3></a>%4$s</li>',
 				$navigation['class'],
 				$navigation['url'],
 				$navigation['title'],
 				$child,
 				$class_li,
-				$class_a,
-				$navigation['excerpt']
+				$class_a
 			);
 		}
 		else {
@@ -112,7 +111,7 @@ class AT_Navigation {
 	
 	private function at_exclude($page)
 	{
-		$exclude = $this->settings['at_navigation']['exclude'];
+		$exclude = $this->settings['menu_principal']['exclude'];
 		$url = substr($page['url'], strlen($this->settings['base_url'])+1);
 		$url = (substr($url, -1) == '/') ? $url : $url.'/';
 		
@@ -143,7 +142,7 @@ class AT_Navigation {
 	
 	private function at_recursive($split = array(), $page = array(), $current_page = array())
 	{
-		$activeClass = (isset($this->settings['at_navigation']['activeClass'])) ? $this->settings['at_navigation']['activeClass'] : 'is-active';
+		$activeClass = (isset($this->settings['menu_principal']['activeClass'])) ? $this->settings['menu_principal']['activeClass'] : 'is-active';
 		if (count($split) == 1)
 		{			
 			$is_index = ($split[0] == '') ? true : false;
