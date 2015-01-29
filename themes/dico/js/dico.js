@@ -8,7 +8,7 @@ $(document).ready(function() {
 				autoOpen: false,
 				closeText: "x",
 				position: { my: "left top", at: "left top", of: $link },
-				width: 300
+				width: 600
 			});
 
 		$link.click(function() {

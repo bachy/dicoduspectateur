@@ -16,10 +16,11 @@
   </head>
   <body>
 
-      <header id="header" class="row">
+      <header id="header" class="row header-def">
         <div class="inner-header">
           <div class="title">
-            <h1><a href="{{ base_url }}">{{ site_title }}</a></h1>
+            <a href="{{ base_url }}"><img src="/content/images/title.png" alt="title"></a>
+            <!--<h1><a href="{{ base_url }}">{{ site_title }}</a></h1>-->
           </div>
           <div class="description">
             <p>{{ meta.description }}</p>
@@ -27,7 +28,7 @@
         </div>
       </header><!-- /header#header -->
 
-      <section id="content" class="row">
+      <section id="content" class="row content-def">
         <div class="large-12 columns">
           {{ content }}
         </div>
@@ -35,6 +36,7 @@
 
       <nav class="definition-list">
         {{ at_navigation.navigation }}
+        <!--{{alphabetical_list.navigation}}-->
       </nav>
     <footer id="footer" class="row">
     </footer><!-- /footer#footer -->

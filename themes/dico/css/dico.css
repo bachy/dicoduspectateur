@@ -5,6 +5,7 @@
  *    user zoom.
  */
 @import "http://fonts.googleapis.com/css?family=Roboto";
+@import "http://fonts.googleapis.com/css?family=Share";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6450,21 +6451,55 @@ th.hide-for-touch {
     display: table-cell !important; } }
 body {
   font-family: "Roboto", sans-serif;
-  margin: 0px; }
+  margin: 30px;
+  background-color: #05ff9f; }
+
+h1, h2, h3, h4, h5 {
+  font-family: "Share", sans-serif; }
+
+a {
+  color: #000;
+  border-bottom: 1px dotted #000; }
 
 header.row {
-  max-width: 100%; }
-header .inner-header {
-  padding: 30px;
-  background-color: #A6A6A6; }
-  header .inner-header .title h1 a {
-    color: #000; }
-  header .inner-header .description {
-    width: 40%;
-    min-width: 300px; }
-    header .inner-header .description p {
-      font-size: 0.9em;
-      line-height: 1.3em; }
+  width: 30%;
+  margin: 8% 0px 0px 10%;
+  display: inline-block;
+  vertical-align: top; }
+header .inner-header .title h1 a {
+  color: #000;
+  font-size: 1.8em;
+  line-height: 1em;
+  border: none; }
+header .inner-header .description {
+  width: 40%;
+  min-width: 300px; }
+  header .inner-header .description p {
+    font-size: 0.9em;
+    line-height: 1.3em; }
+
+#content {
+  display: inline-block;
+  vertical-align: top;
+  margin: 30px 0px 0px 0px; }
+  #content p {
+    font-size: 1.2em; }
+  #content .menu-principal {
+    margin-bottom: 10%; }
+    #content .menu-principal li {
+      display: inline-block;
+      padding-right: 20px; }
+
+header.header-def {
+  margin: 0px 0 0 40px; }
+  header.header-def .title h1 {
+    font-size: 1em; }
+
+#content.content-def {
+  margin: 10px 0 0 30px;
+  display: block; }
+  #content.content-def p {
+    font-size: 1em; }
 
 nav.definition-list ul {
   list-style: none; }
@@ -6473,16 +6508,29 @@ nav.definition-list ul {
   background: #fff;
   border: 2px solid #000;
   position: absolute; }
-  .ui-dialog h1 {
-    font-size: 1.7em;
-    margin-left: 10px; }
-  .ui-dialog p {
-    font-size: 0.8em; }
+  .ui-dialog header {
+    margin: 0px 0px 0px 10px; }
+  .ui-dialog #content {
+    margin-top: 0px; }
+    .ui-dialog #content h1 {
+      font-size: 1.2em; }
+    .ui-dialog #content p {
+      font-size: 1em;
+      width: 48%;
+      display: inline-block;
+      vertical-align: top; }
+    .ui-dialog #content img {
+      width: 100%;
+      display: inline-block;
+      vertical-align: top; }
   .ui-dialog .ui-button {
     border: none;
     background-color: #A6A6A6;
     padding: 2px 10px;
     position: absolute;
     right: 0; }
+
+footer.row {
+  margin-left: 10%; }
 
 /*# sourceMappingURL=dico.css.map */
