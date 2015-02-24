@@ -6,6 +6,15 @@
 @import "http://fonts.googleapis.com/css?family=Share";
 @import "http://fonts.googleapis.com/css?family=EB+Garamond";
 
+/* MEDIA QUERIES */
+$small-range: (0em, 40em); /* 0, 640px */
+$screen: "only screen" !default;
+
+$small-up: $screen !default;
+$small-only: "#{$screen} and (max-width: #{upper-bound($small-range)})" !default;
+
+/*VARIABLES*/
+
 $text: #0000D2;
 $background:#FFF;
 $bleuclair:#00E5B0 ;
@@ -40,12 +49,12 @@ a:hover {
 header {
 	&.row{
 		width: 30%;
+		min-width: 300px;
 		margin: -28px 0px 0px 10%;
 		display: inline-block;
 		vertical-align: top;
 	}
 	.inner-header{
-		//padding: 30px;
 		.title {	
 			a{
 				border: none;
@@ -69,6 +78,8 @@ header {
 	display: inline-block;
 	vertical-align: top;
 	margin: 30px 0px 0px 0px;
+	width: 30%;
+	min-width: 300px;
 	p{
 		font-size: 1.2em;
 		line-height: 1.4em;
@@ -98,8 +109,9 @@ header {
 header {
 	&.header-def {
 		width:10%;
+		min-width: 100px;
 		display: inline-block;
-		margin: 0px 0px 40px 120px;
+		margin: 0px 0px 40px 130px;
 	}
 }
 
@@ -107,6 +119,7 @@ header {
 	&.content-def{
 		margin: 10px 0px 0px 70px;
 		display: inline-block;
+		width:60%;
 		p{
 			font-size: 1.2em;
 			line-height: 1.4em;
@@ -124,14 +137,13 @@ nav.definition-list {
 	ul {
 		list-style: none;
 		li{
-			height: 230px;
+			min-height: 230px;
+			max-height: 350px;
 			border: 3px solid $vert;
-			//border-right: 3px dotted #000;
-			//background-color:$bleuclair;
 			padding-top: 10px;
 			margin: 12px 12px;
 			&.letter {
-				font-size: 7em;
+				font-size: 8em;
 				padding-top: 0px;
 				text-align: center;
 				color:$vert;
@@ -141,13 +153,11 @@ nav.definition-list {
 				}
 			}
 			&:hover{
-				//border: 3px solid $rose;
 				box-shadow: 0px 0px 30px $rose;
 			}
 			h3{
 				font-size: 1.8em;
 				color: $text;
-				//border-bottom: 2px dotted $bleuclair;
 			}
 			p{
 				color: $text;
@@ -169,15 +179,18 @@ nav.definition-list {
 	box-shadow: 3px 3px 50px $rose;
 	position: absolute;
 	max-height:600px;
-	overflow-y: scroll;
+	overflow-y: auto;
+	overflow-x:hidden;
 	padding-left: 30px;
 
 	header{
-		margin: 0px 0px 0px 10px;
+		margin: 0px 0px 0px 30px;
 	}
 
 	#content {
 		margin-top: 0px;
+		margin-left: 30px;
+		width: 90%;
 		h1{
 			font-size: 1.2em;
 			color: $text;
@@ -211,3 +224,46 @@ footer {
 	}
 }
 
+@media #{$small-only} { 
+	header {
+		&.row{
+			margin: -28px 0px 0px 0px;
+		}
+		&.header-def {
+			margin: 0px 0px 10px 10px;
+		}
+
+	}
+	#content {
+		p{
+			text-align: left;
+		}
+
+		.menu-principal {
+			margin-bottom: 30px;
+			li{
+				font-size: 1.4em;
+				padding-right: 10px;
+			}
+		}
+		&.content-def{
+			margin-left: 10px;
+			width: 90%;
+			p{
+	     -moz-column-count: 1;
+	     -webkit-column-count: 1;
+	     -webkit-column-gap: 40px;
+			}
+		}
+	}
+
+	nav.definition-list {
+		margin-left: 0px;
+		margin-right: 30px;
+	}
+
+	.ui-dialog {
+		width:100% !important;
+	}
+
+}

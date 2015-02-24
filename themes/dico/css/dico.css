@@ -6450,6 +6450,9 @@ th.hide-for-touch {
 
   th.show-for-print {
     display: table-cell !important; } }
+/* MEDIA QUERIES */
+/* 0, 640px */
+/*VARIABLES*/
 body {
   font-family: "EB Garamond", serif;
   margin: 30px;
@@ -6469,6 +6472,7 @@ a:hover {
 
 header.row {
   width: 30%;
+  min-width: 300px;
   margin: -28px 0px 0px 10%;
   display: inline-block;
   vertical-align: top; }
@@ -6486,7 +6490,9 @@ header .inner-header .description {
 #content {
   display: inline-block;
   vertical-align: top;
-  margin: 30px 0px 0px 0px; }
+  margin: 30px 0px 0px 0px;
+  width: 30%;
+  min-width: 300px; }
   #content p {
     font-size: 1.2em;
     line-height: 1.4em;
@@ -6507,12 +6513,14 @@ header .inner-header .description {
 
 header.header-def {
   width: 10%;
+  min-width: 100px;
   display: inline-block;
-  margin: 0px 0px 40px 120px; }
+  margin: 0px 0px 40px 130px; }
 
 #content.content-def {
   margin: 10px 0px 0px 70px;
-  display: inline-block; }
+  display: inline-block;
+  width: 60%; }
   #content.content-def p {
     font-size: 1.2em;
     line-height: 1.4em;
@@ -6526,12 +6534,13 @@ nav.definition-list {
   nav.definition-list ul {
     list-style: none; }
     nav.definition-list ul li {
-      height: 230px;
+      min-height: 230px;
+      max-height: 350px;
       border: 3px solid #00FF9A;
       padding-top: 10px;
       margin: 12px 12px; }
       nav.definition-list ul li.letter {
-        font-size: 7em;
+        font-size: 8em;
         padding-top: 0px;
         text-align: center;
         color: #00FF9A; }
@@ -6556,12 +6565,15 @@ nav.definition-list {
   box-shadow: 3px 3px 50px #FF2E74;
   position: absolute;
   max-height: 600px;
-  overflow-y: scroll;
+  overflow-y: auto;
+  overflow-x: hidden;
   padding-left: 30px; }
   .ui-dialog header {
-    margin: 0px 0px 0px 10px; }
+    margin: 0px 0px 0px 30px; }
   .ui-dialog #content {
-    margin-top: 0px; }
+    margin-top: 0px;
+    margin-left: 30px;
+    width: 90%; }
     .ui-dialog #content h1 {
       font-size: 1.2em;
       color: #0000D2; }
@@ -6581,5 +6593,33 @@ nav.definition-list {
 
 footer.row {
   margin-left: 10%; }
+
+@media only screen and (max-width: 40em) {
+  header.row {
+    margin: -28px 0px 0px 0px; }
+  header.header-def {
+    margin: 0px 0px 10px 10px; }
+
+  #content p {
+    text-align: left; }
+  #content .menu-principal {
+    margin-bottom: 30px; }
+    #content .menu-principal li {
+      font-size: 1.4em;
+      padding-right: 10px; }
+  #content.content-def {
+    margin-left: 10px;
+    width: 90%; }
+    #content.content-def p {
+      -moz-column-count: 1;
+      -webkit-column-count: 1;
+      -webkit-column-gap: 40px; }
+
+  nav.definition-list {
+    margin-left: 0px;
+    margin-right: 30px; }
+
+  .ui-dialog {
+    width: 100% !important; } }
 
 /*# sourceMappingURL=dico.css.map */
