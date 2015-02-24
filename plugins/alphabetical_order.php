@@ -40,10 +40,10 @@ class Alphabetical_Order {
       $first_let = (is_numeric(strtoupper(substr($titre,0,1))) ? '#' : strtoupper(substr($titre,0,1)));
       if ($cur_let !== $first_let){
         $cur_let = $first_let;
-        $letter = '<li class="letter large-2 columns">' . $cur_let . '</li>';
+        $letter = '<li class="letter large-2 columns">' . $cur_let . '<div class="wave"></div></li>';
         $html .= $letter;
       }
-      $html .= '<li class="definition large-2 columns"><a href="' . $page['url']. '" title="' . $titre .'"><h3>' . $titre . '</h3></a><p>' . $excerpt . '</p></li>';
+      $html .= '<li class="definition large-2 columns"><a href="' . $page['url']. '" title="' . $titre .'"><h3>' . $titre . '</h3><p>' . $excerpt . '</p></a></li>';
     }
     $html .= '</ul>';
     return $html;

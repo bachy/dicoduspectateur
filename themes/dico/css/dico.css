@@ -6,6 +6,7 @@
  */
 @import "http://fonts.googleapis.com/css?family=Roboto";
 @import "http://fonts.googleapis.com/css?family=Share";
+@import "http://fonts.googleapis.com/css?family=EB+Garamond";
 html {
   font-family: sans-serif;
   /* 1 */
@@ -6450,20 +6451,25 @@ th.hide-for-touch {
   th.show-for-print {
     display: table-cell !important; } }
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: "EB Garamond", serif;
   margin: 30px;
-  background-color: #05ff9f; }
+  background-color: #FFF;
+  color: #0000D2; }
 
 h1, h2, h3, h4, h5 {
-  font-family: "Share", sans-serif; }
+  font-family: "EB Garamond", serif;
+  color: #0000D2; }
 
 a {
-  color: #000;
-  border-bottom: 1px dotted #000; }
+  color: #0000D2;
+  border-bottom: 3px solid #00FF9A; }
+
+a:hover {
+  color: #000; }
 
 header.row {
   width: 30%;
-  margin: 0px 0px 0px 10%;
+  margin: -28px 0px 0px 10%;
   display: inline-block;
   vertical-align: top; }
 header .inner-header .title a {
@@ -6472,7 +6478,7 @@ header .inner-header .description {
   width: 40%;
   min-width: 300px; }
   header .inner-header .description p {
-    font-size: 0.9em;
+    font-size: 1em;
     line-height: 1.3em; }
   header .inner-header .description.page-description {
     display: inline-block; }
@@ -6482,56 +6488,96 @@ header .inner-header .description {
   vertical-align: top;
   margin: 30px 0px 0px 0px; }
   #content p {
-    font-size: 1.2em; }
+    font-size: 1.2em;
+    line-height: 1.4em;
+    text-align: justify; }
   #content .menu-principal {
-    margin-bottom: 10%; }
+    margin-bottom: 30px; }
     #content .menu-principal li {
       display: inline-block;
-      padding-right: 20px; }
+      padding-right: 30px;
+      font-size: 1.8em;
+      color: #0000D2; }
+      #content .menu-principal li a {
+        color: #0000D2;
+        border: 3px solid #00FF9A;
+        padding: 5px 10px; }
+        #content .menu-principal li a:hover {
+          box-shadow: 0px 0px 30px #FF2E74; }
 
 header.header-def {
   width: 10%;
   display: inline-block;
-  margin: 0px 0 40px 40px; }
+  margin: 0px 0px 40px 120px; }
 
 #content.content-def {
-  margin: 10px 0 0 30px;
+  margin: 10px 0px 0px 70px;
   display: inline-block; }
   #content.content-def p {
-    font-size: 1em; }
+    font-size: 1.2em;
+    line-height: 1.4em;
+    -moz-column-count: 2;
+    -moz-column-gap: 40px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 40px; }
 
-nav.definition-list ul {
-  list-style: none; }
-  nav.definition-list ul li {
-    height: 200px; }
-    nav.definition-list ul li.letter {
-      font-size: 5em;
-      padding-top: 0px;
-      text-align: center; }
+nav.definition-list {
+  margin: 0px 0px 50px 50px; }
+  nav.definition-list ul {
+    list-style: none; }
+    nav.definition-list ul li {
+      height: 230px;
+      border: 3px solid #00FF9A;
+      padding-top: 10px;
+      margin: 12px 12px; }
+      nav.definition-list ul li.letter {
+        font-size: 7em;
+        padding-top: 0px;
+        text-align: center;
+        color: #00FF9A; }
+        nav.definition-list ul li.letter:hover {
+          border: 3px solid #00FF9A;
+          box-shadow: none; }
+      nav.definition-list ul li:hover {
+        box-shadow: 0px 0px 30px #FF2E74; }
+      nav.definition-list ul li h3 {
+        font-size: 1.8em;
+        color: #0000D2; }
+      nav.definition-list ul li p {
+        color: #0000D2;
+        font-size: 1.2em;
+        line-height: 1.4em; }
+
+[class*="column"] + [class*="column"]:last-child {
+  float: left; }
 
 .ui-dialog {
   background: #fff;
-  border: 2px solid #000;
+  box-shadow: 3px 3px 50px #FF2E74;
   position: absolute;
   max-height: 600px;
-  overflow: scroll; }
+  overflow-y: scroll;
+  padding-left: 30px; }
   .ui-dialog header {
     margin: 0px 0px 0px 10px; }
   .ui-dialog #content {
     margin-top: 0px; }
     .ui-dialog #content h1 {
-      font-size: 1.2em; }
+      font-size: 1.2em;
+      color: #0000D2; }
     .ui-dialog #content p {
-      font-size: 1em;
+      font-size: 1.2em;
+      line-height: 1.4em;
       width: 95%; }
     .ui-dialog #content img {
       width: 95%; }
   .ui-dialog .ui-button {
     border: none;
-    background-color: #A6A6A6;
-    padding: 2px 10px;
+    background-color: #FF2E74;
+    padding: 4px 15px;
     position: absolute;
-    right: 0; }
+    right: 0;
+    outline: none; }
 
 footer.row {
   margin-left: 10%; }

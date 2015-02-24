@@ -4,28 +4,43 @@
 @import "../bower_components/foundation/scss/foundation.scss";
 @import "http://fonts.googleapis.com/css?family=Roboto";
 @import "http://fonts.googleapis.com/css?family=Share";
+@import "http://fonts.googleapis.com/css?family=EB+Garamond";
+
+$text: #0000D2;
+$background:#FFF;
+$bleuclair:#00E5B0 ;
+$blanc : #FFF;
+$rose: #FF2E74;
+$vert: #00FF9A;
 
 body {
-	font-family: "Roboto", sans-serif;
+	font-family: "EB Garamond", serif;
 	margin: 30px;
-	background-color: #05ff9f;
+	background-color: $background;
+	color:$text;
 }
 
 h1, h2, h3, h4, h5 {
-	font-family: "Share", sans-serif;
+	font-family: "EB Garamond", serif;
+	color:$text;
 
 }
 
 a {
-	color: #000;
-	border-bottom: 1px dotted #000;
+	color: $text;
+	border-bottom: 3px solid $vert;
 }
+
+a:hover {
+	color: #000;
+}
+
 // HOME
 
 header {
 	&.row{
 		width: 30%;
-		margin: 0px 0px 0px 10%;
+		margin: -28px 0px 0px 10%;
 		display: inline-block;
 		vertical-align: top;
 	}
@@ -40,7 +55,7 @@ header {
 			width:40%;
 			min-width: 300px;
 			p{
-				font-size: 0.9em;
+				font-size: 1em;
 				line-height: 1.3em;
 			}
 			&.page-description{
@@ -56,13 +71,25 @@ header {
 	margin: 30px 0px 0px 0px;
 	p{
 		font-size: 1.2em;
+		line-height: 1.4em;
+		text-align: justify;
 	}
 
 	.menu-principal {
-	margin-bottom: 10%;
+		margin-bottom: 30px;
 		li{
 			display: inline-block;
-			padding-right: 20px;
+			padding-right: 30px;
+			font-size: 1.8em;
+			color: $text;
+			a {
+				color: $text;
+				border: 3px solid $vert;
+				padding: 5px 10px;
+				&:hover{
+					box-shadow:  0px 0px 30px $rose;
+				}
+			}
 		}
 	}
 }
@@ -72,44 +99,78 @@ header {
 	&.header-def {
 		width:10%;
 		display: inline-block;
-		margin: 0px 0 40px 40px;
+		margin: 0px 0px 40px 120px;
 	}
 }
 
 #content {
 	&.content-def{
-		margin: 10px 0 0 30px;
+		margin: 10px 0px 0px 70px;
 		display: inline-block;
 		p{
-			font-size: 1em;
+			font-size: 1.2em;
+			line-height: 1.4em;
+     -moz-column-count: 2;
+     -moz-column-gap: 40px;
+     -webkit-column-count: 2;
+     -webkit-column-gap: 40px;
 		}
 	}
 }
 
 
 nav.definition-list {
+	margin:0px 0px 50px 50px;
 	ul {
 		list-style: none;
 		li{
-			height: 200px;
+			height: 230px;
+			border: 3px solid $vert;
+			//border-right: 3px dotted #000;
+			//background-color:$bleuclair;
+			padding-top: 10px;
+			margin: 12px 12px;
 			&.letter {
-				font-size: 5em;
+				font-size: 7em;
 				padding-top: 0px;
 				text-align: center;
-				//border: 1px solid #000;
+				color:$vert;
+				&:hover {
+					border: 3px solid $vert;
+					box-shadow: none;
+				}
+			}
+			&:hover{
+				//border: 3px solid $rose;
+				box-shadow: 0px 0px 30px $rose;
+			}
+			h3{
+				font-size: 1.8em;
+				color: $text;
+				//border-bottom: 2px dotted $bleuclair;
+			}
+			p{
+				color: $text;
+				font-size: 1.2em;
+				line-height: 1.4em;
 			}
 		}
 	}
+}
+
+[class*="column"] + [class*="column"]:last-child{
+	float: left;
 }
 
 // DIALOG CSS
 
 .ui-dialog {
 	background: #fff;
-	border: 2px solid #000;
+	box-shadow: 3px 3px 50px $rose;
 	position: absolute;
 	max-height:600px;
-	overflow: scroll;
+	overflow-y: scroll;
+	padding-left: 30px;
 
 	header{
 		margin: 0px 0px 0px 10px;
@@ -119,10 +180,12 @@ nav.definition-list {
 		margin-top: 0px;
 		h1{
 			font-size: 1.2em;
+			color: $text;
 		}
 
 		p{
-			font-size: 1em;
+			font-size: 1.2em;
+			line-height: 1.4em;
 			width: 95%;
 		}
 
@@ -134,10 +197,11 @@ nav.definition-list {
 
 	.ui-button{
 		border:none;
-		background-color: #A6A6A6;
-		padding: 2px 10px;
+		background-color: $rose;
+		padding: 4px 15px;
 		position: absolute;
 		right:0;
+		outline: none;
 	}
 }
 
