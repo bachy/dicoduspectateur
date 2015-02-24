@@ -25,21 +25,15 @@ a {
 header {
 	&.row{
 		width: 30%;
-		margin: 8% 0px 0px 10%;
+		margin: 0px 0px 0px 10%;
 		display: inline-block;
 		vertical-align: top;
 	}
 	.inner-header{
 		//padding: 30px;
-		.title {
-			
-			h1 {
-				a{
-					color:#000;
-					font-size: 1.8em;
-					line-height: 1em;
-					border: none;
-				}
+		.title {	
+			a{
+				border: none;
 			}
 		}
 		.description {
@@ -48,6 +42,9 @@ header {
 			p{
 				font-size: 0.9em;
 				line-height: 1.3em;
+			}
+			&.page-description{
+				display: inline-block;
 			}
 		}
 	}	
@@ -73,20 +70,16 @@ header {
 // PAGE DEFINITION
 header {
 	&.header-def {
-		margin: 0px 0 0 40px;
-		.title{
-			h1{
-				font-size: 1em;
-			}
-		}
-
+		width:10%;
+		display: inline-block;
+		margin: 0px 0 40px 40px;
 	}
 }
 
 #content {
 	&.content-def{
 		margin: 10px 0 0 30px;
-		display: block;
+		display: inline-block;
 		p{
 			font-size: 1em;
 		}
@@ -97,6 +90,15 @@ header {
 nav.definition-list {
 	ul {
 		list-style: none;
+		li{
+			height: 200px;
+			&.letter {
+				font-size: 5em;
+				padding-top: 0px;
+				text-align: center;
+				//border: 1px solid #000;
+			}
+		}
 	}
 }
 
@@ -106,6 +108,8 @@ nav.definition-list {
 	background: #fff;
 	border: 2px solid #000;
 	position: absolute;
+	max-height:600px;
+	overflow: scroll;
 
 	header{
 		margin: 0px 0px 0px 10px;
@@ -119,17 +123,11 @@ nav.definition-list {
 
 		p{
 			font-size: 1em;
-			width: 48%;
-			//float: right;
-			display:inline-block;
-			vertical-align: top;	
+			width: 95%;
 		}
 
 		img {
-			width: 100%;
-			//float: right;
-			display:inline-block;
-			vertical-align: top;
+			width: 95%;
 		}
 
 	}

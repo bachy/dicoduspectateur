@@ -6463,13 +6463,10 @@ a {
 
 header.row {
   width: 30%;
-  margin: 8% 0px 0px 10%;
+  margin: 0px 0px 0px 10%;
   display: inline-block;
   vertical-align: top; }
-header .inner-header .title h1 a {
-  color: #000;
-  font-size: 1.8em;
-  line-height: 1em;
+header .inner-header .title a {
   border: none; }
 header .inner-header .description {
   width: 40%;
@@ -6477,6 +6474,8 @@ header .inner-header .description {
   header .inner-header .description p {
     font-size: 0.9em;
     line-height: 1.3em; }
+  header .inner-header .description.page-description {
+    display: inline-block; }
 
 #content {
   display: inline-block;
@@ -6491,23 +6490,31 @@ header .inner-header .description {
       padding-right: 20px; }
 
 header.header-def {
-  margin: 0px 0 0 40px; }
-  header.header-def .title h1 {
-    font-size: 1em; }
+  width: 10%;
+  display: inline-block;
+  margin: 0px 0 40px 40px; }
 
 #content.content-def {
   margin: 10px 0 0 30px;
-  display: block; }
+  display: inline-block; }
   #content.content-def p {
     font-size: 1em; }
 
 nav.definition-list ul {
   list-style: none; }
+  nav.definition-list ul li {
+    height: 200px; }
+    nav.definition-list ul li.letter {
+      font-size: 5em;
+      padding-top: 0px;
+      text-align: center; }
 
 .ui-dialog {
   background: #fff;
   border: 2px solid #000;
-  position: absolute; }
+  position: absolute;
+  max-height: 600px;
+  overflow: scroll; }
   .ui-dialog header {
     margin: 0px 0px 0px 10px; }
   .ui-dialog #content {
@@ -6516,13 +6523,9 @@ nav.definition-list ul {
       font-size: 1.2em; }
     .ui-dialog #content p {
       font-size: 1em;
-      width: 48%;
-      display: inline-block;
-      vertical-align: top; }
+      width: 95%; }
     .ui-dialog #content img {
-      width: 100%;
-      display: inline-block;
-      vertical-align: top; }
+      width: 95%; }
   .ui-dialog .ui-button {
     border: none;
     background-color: #A6A6A6;
