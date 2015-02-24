@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-	$('.definition-list .a-item').each(function() {
+	$('.definition-list li.definition a').each(function() {
 		var $link = $(this);
 		var $dialog = $('<div></div>')
 			.load($link.attr('href'))
