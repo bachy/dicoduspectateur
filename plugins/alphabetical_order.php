@@ -2,22 +2,24 @@
 
 /**
  * Call page in alphabetical order
+ * Alphabetical Letter 
  *
  * @author Sarah Garcin
  */
-class Alphabetical_Order {
+class Alphabetical_Order { 
+  private $pages;
 
   public function get_pages(&$pages, &$current_page, &$prev_page, &$next_page) {
   	sort($pages);
-  	$cur_let = null;
     $pages = $this->removeElementWithValue($pages, 'title', 'Welcome');
     $pages = $this->removeElementWithValue($pages, 'title', 'Définitions');
     $pages = $this->removeElementWithValue($pages, 'title', 'À propos');
-    $this->build_list($pages);
+    $this->pages = array();
+    $this->pages = $pages;
   }// end function 
 
   public function before_render(&$twig_vars, &$twig){
-    $twig_vars['alphabetical']['navigation'] = " ";
+    $twig_vars['alphabetical'] = $this->build_list($this->pages);
   }
 
   private function removeElementWithValue($array, $key, $value){
@@ -26,24 +28,25 @@ class Alphabetical_Order {
         unset($array[$subKey]);
       }
     }
-     return $array;
+    return $array;
   }
 
   private function build_list($pages){
-    foreach ($pages as $key => $page) {
+    $cur_let = null;
+    $html = '<ul>';
+    foreach ($pages as $page) {
       $titre = $page['title'];
       $excerpt = $page['excerpt'];
       $first_let = (is_numeric(strtoupper(substr($titre,0,1))) ? '#' : strtoupper(substr($titre,0,1)));
       if ($cur_let !== $first_let){
-          $cur_let = $first_let;
-          ?></ul></ul>
-            <li class="letter large-2 columns"><?php echo $cur_let;?></li>
-            <?php
+        $cur_let = $first_let;
+        $letter = '<li class="letter large-2 columns">' . $cur_let . '</li>';
+        $html .= $letter;
       }
-      ?>
-      <li class="large-2 columns"><a href="<?php echo $page['url']?>" title= "<?php echo $title?>"><h3><?php echo $titre ?></h3></a><p><?php echo $excerpt?></p></li>
-      <?php
+      $html .= '<li class="definition large-2 columns"><a href="' . $page['url']. '" title="' . $titre .'"><h3>' . $titre . '</h3></a><p>' . $excerpt . '</p></li>';
     }
+    $html .= '</ul>';
+    return $html;
   }
 
 } // end file
