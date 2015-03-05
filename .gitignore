@@ -1,3 +1,4 @@
 content/*
 *.sublime-workspace
 *.sublime-project
+config.php
